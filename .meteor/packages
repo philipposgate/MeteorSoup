@@ -5,3 +5,8 @@
 # but you can also edit it by hand.
 
 meteor-platform
+iron:router
+accounts-ui
+accounts-password
+joshowens:accounts-entry
+bootstrap
