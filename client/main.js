@@ -1,5 +1,3 @@
-
-
 Router.configure({
   layoutTemplate: 'siteLayout',
   load: function() {
@@ -8,52 +6,10 @@ Router.configure({
   }
 });
 
-Router.map( function () {
-
-  this.route('home', {
-    path: '/'
-  });
-
-  this.route('about', {
-  });
-
-  this.route('contact', {
-  });
+Router.route('/', function () {
+  this.render('home');
 });
-
-
-
-
-if (Meteor.isClient) {
-  Session.set("counter", 0);
-
-
-  Template.hello.greeting = function () {
-    return "Welcome to Meteor Soup.";
-  };
-
-  Template.hello.counter = function () {
-    return Session.get("counter");
-  };
-
-  Template.hello.events({
-    'click input': function () {
-      console.log("You pressed the button");
-
-      var counter = Session.get("counter");
-      counter = counter + 1;
-      console.log(counter);
-      Session.set("counter", counter);
-    }
-  });
-
-  Template.navbar.helpers({
-    activeIfTemplateIs: function (template) {
-      var currentRoute = Router.current();
-      return currentRoute &&
-      template === currentRoute.lookupTemplate() ? 'active' : '';
-    }
-  });
-
-}
+Router.route('/home');
+Router.route('/about');
+Router.route('/contact');
 
