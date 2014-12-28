@@ -8,4 +8,5 @@ Router.route('/', function () {
 
 Router.route('/home');
 Router.route('/about');
+Router.route('/counter');
 
